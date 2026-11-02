@@ -1,5 +1,5 @@
 import type { PhotoItem } from "@/components/Photo";
-import { rollCall, sam, saddle, walks } from "./photos";
+import { pig, rollCall, sam, saddle, walks, wedding } from "./photos";
 import type { ServiceClass } from "./site";
 
 // One page per thing people search for. Each targets one phrase in its title and H1.
@@ -143,7 +143,35 @@ export const servicePages: ServicePage[] = [
       },
     ],
     faqIds: ["livestock", "packages", "areas", "how-to-book"],
-    photos: [sam.lamb, sam.sheep, photo("Goats and pigs"), saddle[0]],
+    photos: [sam.lamb, sam.sheep, pig, saddle[0]],
+  },
+  {
+    slug: "wedding-dog-sitting",
+    service: "Wedding dog-sitting",
+    title: "Wedding dog-sitter near Brackley",
+    description:
+      "Wedding dog-sitting from Sam Rockell, Brackley. Your dog at your wedding, cared for behind the scenes from getting ready to the photos. Bespoke packages.",
+    h1: "Wedding dog-sitting near Brackley",
+    intro:
+      "Dogs are part of the family, and your wedding memories should include them too. I look after your dog behind the scenes for the day, so they can be part of it and you can enjoy every moment.",
+    classIds: ["wedding"],
+    sections: [
+      {
+        h: "On the day",
+        p: [
+          "I collect your dog, get them washed, brushed and into their wedding outfit, and bring them to the venue. They join you for the ceremony and the photographs, then I take them somewhere quiet for water, a walk and a rest while you carry on.",
+          "At the end of the day I take them home, or back to whoever is looking after them, so nobody in the wedding party has to keep an eye on the dog.",
+        ],
+      },
+      {
+        h: "A package for your day",
+        p: [
+          "Every wedding is different: the venue, the timings, and how much of the day you want your dog there for. Tell me the date, the venue and a little about your dog, and I will put together a package and a price.",
+        ],
+      },
+    ],
+    faqIds: ["wedding", "packages", "areas", "how-to-book"],
+    photos: [wedding[0], wedding[1], wedding[2], wedding[3]],
   },
 ];
 

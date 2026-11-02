@@ -88,6 +88,14 @@ export const faqs: Faq[] = [
     ],
   },
   {
+    id: "wedding",
+    q: "Can someone look after my dog at our wedding?",
+    a: [
+      "Yes. Sam's wedding dog-sitting service brings your dog to your wedding and looks after them behind the scenes, from getting them ready in the morning to the ceremony and photographs, then a walk, water and rest while you celebrate.",
+      "Each wedding gets its own package and price. Message Sam with the date, the venue and your dog's name and breed.",
+    ],
+  },
+  {
     id: "reviews",
     q: "Is Sam's Pet Services any good?",
     a: [

@@ -8,6 +8,7 @@ const servicePath: Record<ServiceClass["id"], string> = {
   visit: "/cat-sitting-brackley/",
   sit: "/pet-sitting-brackley/",
   farm: "/smallholding-livestock-horse-care/",
+  wedding: "/wedding-dog-sitting/",
 };
 
 function FeeTable({ c }: { c: ServiceClass }) {

@@ -28,12 +28,12 @@ export function whatsappLink(text: string) {
 export const defaultMessage =
   "Hi Sam, I found you on your website. I'd like to ask about looking after my pet.";
 
-export type Band = "pink" | "yellow" | "green" | "blue" | "navy";
+export type Band = "pink" | "yellow" | "green" | "blue" | "grey" | "navy";
 
 export type Rate = { label: string; weekday: number | null; weekend: number | null; from?: boolean };
 
 export type ServiceClass = {
-  id: "group" | "solo" | "visit" | "sit" | "farm";
+  id: "group" | "solo" | "visit" | "sit" | "farm" | "wedding";
   number: number;
   band: Band;
   name: string;
@@ -100,6 +100,15 @@ export const classes: ServiceClass[] = [
     name: "Horses, sheep and smallholdings",
     short: "Checks, feeding and lambing help for bigger animals",
     body: "I have looked after sheep (lambing included), horses, pigs, goats, chickens and ducks. Tell me what you keep and what needs doing, and I will price it for you.",
+    rates: [],
+  },
+  {
+    id: "wedding",
+    number: 6,
+    band: "grey",
+    name: "Wedding dog-sitting",
+    short: "Your dog at your wedding, looked after behind the scenes",
+    body: "A personal wedding dog-sitting service so your best friend is part of your special day. I look after your dog behind the scenes, so you can enjoy every moment.",
     rates: [],
   },
 ];

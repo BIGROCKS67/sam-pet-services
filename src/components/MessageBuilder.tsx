@@ -4,7 +4,7 @@ import { useId, useMemo, useState } from "react";
 import { areas, site, whatsappLink } from "@/data/site";
 import { WhatsAppGlyph } from "./WhatsAppGlyph";
 
-type Kind = "group" | "solo" | "visit" | "sit-cat" | "sit-dog" | "farm";
+type Kind = "group" | "solo" | "visit" | "sit-cat" | "sit-dog" | "farm" | "wedding";
 
 const kinds: { id: Kind; label: string }[] = [
   { id: "group", label: "Group walk" },
@@ -13,6 +13,7 @@ const kinds: { id: Kind; label: string }[] = [
   { id: "sit-dog", label: "Overnight sit, dogs" },
   { id: "sit-cat", label: "Overnight sit, cats" },
   { id: "farm", label: "Horses, sheep or smallholding" },
+  { id: "wedding", label: "Wedding dog-sitting" },
 ];
 
 const days = ["Mon", "Tue", "Wed", "Thu", "Fri", "Sat", "Sun"] as const;
@@ -95,7 +96,7 @@ export function MessageBuilder() {
     if (start) {
       const d = new Date(start + "T12:00:00");
       lines.push(
-        `Starting: ${d.toLocaleDateString("en-GB", { weekday: "short", day: "numeric", month: "short" })}`,
+        `${kind === "wedding" ? "Wedding date" : "Starting"}: ${d.toLocaleDateString("en-GB", { weekday: "short", day: "numeric", month: "short" })}`,
       );
     }
     lines.push(
@@ -265,7 +266,7 @@ export function MessageBuilder() {
             </div>
           ) : null}
           <div className="field">
-            <label htmlFor={`${uid}-start`}>Starting from</label>
+            <label htmlFor={`${uid}-start`}>{kind === "wedding" ? "Wedding date" : "Starting from"}</label>
             <input
               id={`${uid}-start`}
               className="input"
@@ -305,7 +306,9 @@ export function MessageBuilder() {
             placeholder={
               kind === "farm"
                 ? "e.g. 12 ewes, morning and evening check"
-                : "e.g. Bella, springer spaniel"
+                : kind === "wedding"
+                  ? "e.g. Bella, cockapoo; venue near Brackley"
+                  : "e.g. Bella, springer spaniel"
             }
             value={about}
             onChange={(e) => setAbout(e.target.value)}
@@ -348,6 +351,8 @@ export function MessageBuilder() {
               <p className="mt-1 text-[length:var(--step-1)]">
                 {kind === "farm"
                   ? "Sam prices these once she knows the animals."
+                  : kind === "wedding"
+                    ? "Sam puts together a package for each wedding."
                   : "Pick the days to see a price."}
               </p>
             )}

@@ -154,8 +154,8 @@ export default function Home() {
             </div>
           </div>
           <div className="grid grid-cols-2 gap-4">
-            <Photo p={sam.lamb} sizes="(min-width: 1024px) 260px, 45vw" className="reveal [&_img]:aspect-[3/4] [&_img]:object-cover" />
-            <Photo p={sam.donkey} sizes="(min-width: 1024px) 260px, 45vw" className="reveal mt-10 [&_img]:aspect-[3/4] [&_img]:object-cover" />
+            <Photo p={sam.hen} sizes="(min-width: 1024px) 260px, 45vw" className="reveal [&_img]:aspect-[3/4] [&_img]:object-cover" />
+            <Photo p={sam.lamb} sizes="(min-width: 1024px) 260px, 45vw" className="reveal mt-10 [&_img]:aspect-[3/4] [&_img]:object-cover" />
             <Photo p={saddle[1]} sizes="(min-width: 1024px) 540px, 92vw" className="reveal col-span-2 [&_img]:aspect-[4/3] [&_img]:object-cover" />
           </div>
         </div>

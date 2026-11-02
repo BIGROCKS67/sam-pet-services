@@ -12,6 +12,7 @@ const nav = [
 const more = [
   { href: "/cat-sitting-brackley/", label: "Cat sitting and visits" },
   { href: "/smallholding-livestock-horse-care/", label: "Horses and livestock" },
+  { href: "/wedding-dog-sitting/", label: "Wedding dog-sitting" },
   { href: "/areas/", label: "Areas" },
   { href: "/#about", label: "About Sam" },
   { href: "/book/", label: "Write a message" },
