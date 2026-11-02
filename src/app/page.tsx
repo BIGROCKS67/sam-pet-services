@@ -133,8 +133,7 @@ export default function Home() {
             </figcaption>
           </figure>
           <div>
-            <p className="text-[length:var(--step--1)] font-semibold">Printed on Sam&rsquo;s price list</p>
-            <ul className="mt-2 border-t-[1.5px] border-[var(--ink)]">
+            <ul className="border-t-[1.5px] border-[var(--ink)]">
               {flyerQuotes.map((q) => (
                 <li key={q.text} className="reveal border-b border-[color-mix(in_oklab,var(--ink)_25%,transparent)] py-3 italic">
                   &ldquo;{q.text}&rdquo;

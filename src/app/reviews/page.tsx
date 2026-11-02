@@ -35,8 +35,7 @@ export default function ReviewsPage() {
             </figcaption>
           </figure>
 
-          <h2 className="mt-12 text-[length:var(--step-2)]">Printed on Sam&rsquo;s price list</h2>
-          <ul className="mt-3 border-t-[1.5px] border-[var(--ink)]">
+          <ul className="mt-8 border-t-[1.5px] border-[var(--ink)]">
             {flyerQuotes.map((q) => (
               <li key={q.text} className="reveal border-b border-[var(--rule)] py-4 text-[length:var(--step-1)] italic leading-snug">
                 &ldquo;{q.text}&rdquo;
@@ -45,7 +44,7 @@ export default function ReviewsPage() {
           </ul>
 
           <h2 className="mt-12 text-[length:var(--step-2)]">Has Sam looked after your animals?</h2>
-          <p className="measure mt-3">A review helps other people round Brackley find her. It takes a minute on Facebook.</p>
+          <p className="measure mt-3">A review helps other people around Brackley find her. It takes a minute on Facebook.</p>
           <a href={site.facebookReviews} rel="noopener" className="btn btn-line mt-5">
             <FacebookGlyph />
             Leave a review
