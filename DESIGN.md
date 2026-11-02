@@ -83,7 +83,7 @@ Radius 3px on controls, 0 on bands and photos. Ruled rows and tables, never card
 
 ### Signature component
 
-**The schedule:** a ruled table per class, each headed by a full-width band in its rainbow colour carrying the class number and name, fees in Courier Prime in weekday / weekend columns. On the home page the rainbow arch from the logo is drawn in CSS above the headline as five concentric arcs, matching her logo, the one decorative mark on the site.
+**The schedule:** a ruled table per class, each headed by a full-width band in its rainbow colour carrying the class number and name, fees in Courier Prime in weekday / weekend columns. On the home page her own logo (cut out from her artwork, `logo-full.png`) sits above the headline; the header and service pages use the rainbow-and-animals part (`logo-mark.png`).
 
 ### The one interaction
 
@@ -103,4 +103,4 @@ Swap test: a Brackley competitor's logo on this page would sit under Sam's rainb
 
 ## 11. Previous builds
 
-Carter's: Archivo, navy + yellow, paper. KiiKii: Bricolage / Public Sans / Plex Mono, black and white. This build shares neither font nor palette. Carter's also uses navy; here navy is only ink and the base colour is lime, and the hero is type-and-arch, not a photo.
+Carter's: Archivo, navy + yellow, paper. KiiKii: Bricolage / Public Sans / Plex Mono, black and white. This build shares neither font nor palette. Carter's also uses navy; here navy is only ink and the base colour is lime, and the hero is her own logo and type, not a photo.

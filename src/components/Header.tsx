@@ -1,6 +1,6 @@
 import Link from "next/link";
 import { site } from "@/data/site";
-import { Arch } from "./Arch";
+import { Logo } from "./Logo";
 
 const nav = [
   { href: "/dog-walking-brackley/", label: "Dog walking" },
@@ -23,7 +23,7 @@ export function Header() {
     <header className="sticky top-0 z-30 border-b border-[var(--rule)] bg-[var(--paper)]">
       <div className="wrap flex h-[var(--header-h)] items-center justify-between gap-4">
         <Link href="/" className="flex items-center gap-2.5 no-underline" aria-label={`${site.name}, home`}>
-          <Arch className="h-6 w-12 shrink-0" />
+          <Logo variant="mark" priority className="h-9 w-auto shrink-0" />
           <span className="font-[family-name:var(--font-display)] text-[1.2rem] leading-none whitespace-nowrap">
             {site.name}
           </span>

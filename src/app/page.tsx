@@ -1,6 +1,6 @@
 import Image from "next/image";
 import Link from "next/link";
-import { Arch } from "@/components/Arch";
+import { Logo } from "@/components/Logo";
 import { MessageBuilder } from "@/components/MessageBuilder";
 import { Photo } from "@/components/Photo";
 import { FeeIndex } from "@/components/Schedule";
@@ -15,10 +15,10 @@ const homeFaqs = faqById(["dog-walk-cost", "pet-sit-cost", "livestock", "areas"]
 export default function Home() {
   return (
     <>
-      {/* Hero: type, the logo's rainbow, and the fees straight away. */}
+      {/* Hero: Sam's logo, type, and the fees straight away. */}
       <section className="wrap grid gap-10 pb-14 pt-8 md:pt-14 lg:grid-cols-[minmax(0,1.25fr)_minmax(0,1fr)] lg:items-end">
         <div>
-          <Arch draw className="w-40 md:w-56" />
+          <Logo priority className="w-60 md:w-72" />
           <h1 className="mt-5 text-[length:var(--step-4)]">
             Dog walks, pet visits and overnight sits in Brackley.
             <span className="mt-2 block text-[length:var(--step-2)] text-[var(--ink-2)]">

@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import { notFound } from "next/navigation";
-import { Arch } from "@/components/Arch";
+import { Logo } from "@/components/Logo";
 import { Photo } from "@/components/Photo";
 import { Schedule } from "@/components/Schedule";
 import { BreadcrumbJsonLd, FaqJsonLd, FaqList, ServiceJsonLd } from "@/components/Seo";
@@ -53,7 +53,7 @@ export default async function ServicePageView({ params }: Props) {
 
       <section className="wrap grid gap-10 pb-12 pt-6 lg:grid-cols-[minmax(0,1.3fr)_minmax(0,1fr)] lg:items-end">
         <div>
-          <Arch draw className="w-28 md:w-36" />
+          <Logo variant="mark" className="w-28 md:w-36" />
           <h1 className="mt-4 text-[length:var(--step-4)]">{s.h1}</h1>
           <p className="hero-in measure mt-5 text-[length:var(--step-1)] leading-snug">{s.intro}</p>
           <div className="hero-in mt-7 flex flex-wrap items-center gap-3">
