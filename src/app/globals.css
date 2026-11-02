@@ -1,0 +1,383 @@
+/* The site where Sam's home-made price list becomes a show schedule:
+   every service is a class on its own band of her rainbow, with the fee printed beside it.
+   See DESIGN.md before changing anything here. */
+
+@import "tailwindcss";
+
+:root {
+  --paper: #ecf6d2; /* outer margin of Sam's printed price list, lifted for reading */
+  --lemon: #f5f9c4; /* the lemon panel her price table sits on */
+  --ink: #16204a; /* navy outline of the logo rainbow and line-drawn animals */
+  --ink-2: #3c4668; /* ink lifted, secondary text */
+  --rule: #c6d4a6; /* paper taken darker for 1px rules */
+  --band-pink: #dd7f7f; /* outer arc of the logo rainbow */
+  --band-yellow: #f3dc84; /* second arc */
+  --band-green: #a5c48b; /* third arc */
+  --band-blue: #96d3f2; /* inner arc */
+  --on-ink: #f5f9e6; /* paper tone for text on navy */
+
+  --font-display: var(--font-display-face), Georgia, serif;
+  --font-body: var(--font-text), system-ui, sans-serif;
+  --font-fig: var(--font-figures), "Courier New", monospace;
+
+  --step--1: clamp(0.84rem, 0.82rem + 0.1vw, 0.9rem);
+  --step-0: clamp(1.03rem, 1rem + 0.15vw, 1.12rem);
+  --step-1: clamp(1.24rem, 1.18rem + 0.3vw, 1.45rem);
+  --step-2: clamp(1.5rem, 1.38rem + 0.6vw, 1.9rem);
+  --step-3: clamp(1.8rem, 1.6rem + 1.1vw, 2.55rem);
+  --step-4: clamp(2.15rem, 1.8rem + 2vw, 3.6rem);
+
+  --gutter: clamp(1rem, 0.6rem + 2vw, 2.5rem);
+  --header-h: 4rem;
+}
+
+html {
+  background: var(--paper);
+  color: var(--ink);
+  scroll-padding-top: calc(var(--header-h) + 1rem);
+  -webkit-text-size-adjust: 100%;
+}
+
+body {
+  font-family: var(--font-body);
+  font-size: var(--step-0);
+  line-height: 1.55;
+  background: var(--paper);
+  font-feature-settings: "kern";
+}
+
+h1,
+h2,
+h3 {
+  font-family: var(--font-display);
+  font-weight: 400;
+  line-height: 1.08;
+  letter-spacing: -0.01em;
+  text-wrap: balance;
+}
+
+p,
+li {
+  text-wrap: pretty;
+}
+
+a {
+  color: inherit;
+  text-underline-offset: 0.18em;
+  text-decoration-thickness: 1px;
+}
+
+a:hover {
+  text-decoration-thickness: 2px;
+}
+
+:focus-visible {
+  outline: 2px solid var(--ink);
+  outline-offset: 3px;
+  border-radius: 2px;
+}
+
+.fig {
+  font-family: var(--font-fig);
+  font-variant-numeric: tabular-nums;
+  letter-spacing: 0;
+}
+
+.wrap {
+  width: 100%;
+  max-width: 72rem;
+  margin-inline: auto;
+  padding-inline: var(--gutter);
+}
+
+.measure {
+  max-width: 64ch;
+}
+
+/* Buttons: solid ink is the only action colour. */
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.55rem;
+  min-height: 3rem;
+  padding: 0.7rem 1.2rem;
+  border-radius: 3px;
+  font-weight: 600;
+  font-size: var(--step-0);
+  line-height: 1.2;
+  text-decoration: none;
+  border: 1.5px solid var(--ink);
+  transition:
+    background-color 150ms ease-out,
+    color 150ms ease-out,
+    transform 150ms ease-out;
+}
+
+.btn:active {
+  transform: scale(0.97);
+}
+
+.btn-ink {
+  background: var(--ink);
+  color: var(--on-ink);
+}
+
+.btn-ink:hover {
+  background: #0b1236;
+}
+
+.btn-line {
+  background: transparent;
+  color: var(--ink);
+}
+
+.btn-line:hover {
+  background: var(--lemon);
+}
+
+/* Bands: the rainbow as colour blocks. Text on them is always ink. */
+.band-pink {
+  background: var(--band-pink);
+}
+.band-yellow {
+  background: var(--band-yellow);
+}
+.band-green {
+  background: var(--band-green);
+}
+.band-blue {
+  background: var(--band-blue);
+}
+.band-navy {
+  background: var(--ink);
+  color: var(--on-ink);
+}
+
+/* Ruled tables like a show schedule. */
+.fees {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.fees th,
+.fees td {
+  padding: 0.6rem 0.75rem;
+  border-bottom: 1px solid var(--rule);
+  text-align: left;
+  vertical-align: baseline;
+}
+
+.fees thead th {
+  font-size: var(--step--1);
+  font-weight: 600;
+  color: var(--ink-2);
+  border-bottom: 1.5px solid var(--ink);
+}
+
+.fees td.fig,
+.fees th.num {
+  text-align: right;
+  white-space: nowrap;
+}
+
+.fees td.fig {
+  font-size: var(--step-1);
+}
+
+@media (max-width: 480px) {
+  .fees th,
+  .fees td {
+    padding-inline: 0.45rem;
+  }
+}
+
+/* Photos are square-cornered, ungraded, never zoomed. */
+.photo img {
+  display: block;
+  width: 100%;
+  height: auto;
+  background: var(--rule);
+}
+
+.photo figcaption {
+  font-size: var(--step--1);
+  color: var(--ink-2);
+  margin-top: 0.4rem;
+  line-height: 1.35;
+}
+
+/* Mobile photo row: one at a time, native scroll. */
+.snap-row {
+  display: grid;
+  grid-auto-flow: column;
+  grid-auto-columns: min(72%, 17rem);
+  gap: 0.9rem;
+  overflow-x: auto;
+  scroll-snap-type: x mandatory;
+  overscroll-behavior-x: contain;
+  padding-bottom: 0.75rem;
+  scrollbar-width: thin;
+}
+
+.snap-row > * {
+  scroll-snap-align: start;
+}
+
+/* Form controls */
+.field label,
+.field legend {
+  display: block;
+  font-weight: 600;
+  margin-bottom: 0.35rem;
+}
+
+.field .hint {
+  display: block;
+  font-size: var(--step--1);
+  color: var(--ink-2);
+  font-weight: 400;
+  margin-top: -0.15rem;
+  margin-bottom: 0.4rem;
+}
+
+.input {
+  width: 100%;
+  min-height: 3rem;
+  padding: 0.6rem 0.75rem;
+  font: inherit;
+  font-size: max(16px, var(--step-0));
+  color: var(--ink);
+  background: #fbfde9;
+  border: 1.5px solid var(--ink-2);
+  border-radius: 3px;
+}
+
+.input:focus-visible {
+  outline-offset: 1px;
+}
+
+.chip {
+  position: relative;
+  display: inline-flex;
+}
+
+.chip input {
+  position: absolute;
+  opacity: 0;
+  inset: 0;
+  margin: 0;
+  cursor: pointer;
+}
+
+.chip span {
+  display: inline-flex;
+  align-items: center;
+  min-height: 2.75rem;
+  min-width: 2.75rem;
+  justify-content: center;
+  padding: 0.45rem 0.85rem;
+  border: 1.5px solid var(--ink-2);
+  border-radius: 3px;
+  background: #fbfde9;
+  transition:
+    background-color 150ms ease-out,
+    color 150ms ease-out;
+}
+
+.chip input:checked + span {
+  background: var(--ink);
+  border-color: var(--ink);
+  color: var(--on-ink);
+}
+
+.chip input:focus-visible + span {
+  outline: 2px solid var(--ink);
+  outline-offset: 2px;
+}
+
+/* Mobile action bar sits above the home indicator. */
+.action-bar {
+  padding-bottom: env(safe-area-inset-bottom);
+}
+
+@media (min-width: 768px) {
+  .snap-row {
+    grid-auto-columns: 15rem;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .btn,
+  .chip span {
+    transition: none;
+  }
+}
+
+/* Motion. All of it is opt-in and only where it says something:
+   the rainbow draws itself like Sam's logo, things rise into view as you reach them,
+   and the price ticks over when your choices change it. */
+@media (prefers-reduced-motion: no-preference) {
+  .arch-draw .arc {
+    stroke-dasharray: 1;
+    stroke-dashoffset: 1;
+    animation: arc-draw 900ms cubic-bezier(0.2, 0.7, 0.2, 1) forwards;
+    animation-delay: calc(150ms + var(--i) * 140ms);
+  }
+
+  .tick {
+    animation: tick 260ms cubic-bezier(0.2, 0.7, 0.2, 1);
+  }
+
+  .hero-in {
+    animation: rise 450ms cubic-bezier(0.2, 0.7, 0.2, 1) both;
+    animation-delay: 250ms;
+  }
+
+  /* Browsers without scroll timelines just show everything. */
+  @supports (animation-timeline: view()) {
+    .reveal {
+      animation: rise linear both;
+      animation-timeline: view();
+      animation-range: entry 0% entry 55%;
+    }
+  }
+
+  .photo img,
+  .lift {
+    transition: transform 180ms ease-out;
+  }
+
+  .photo:hover img,
+  .lift:hover {
+    transform: translateY(-3px);
+  }
+}
+
+@keyframes arc-draw {
+  to {
+    stroke-dashoffset: 0;
+  }
+}
+
+@keyframes rise {
+  from {
+    opacity: 0;
+    transform: translateY(18px);
+  }
+  to {
+    opacity: 1;
+    transform: none;
+  }
+}
+
+@keyframes tick {
+  from {
+    opacity: 0.2;
+    transform: translateY(-0.25em);
+  }
+  to {
+    opacity: 1;
+    transform: none;
+  }
+}

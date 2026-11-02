@@ -1,0 +1,16 @@
+import Link from "next/link";
+import { Arch } from "@/components/Arch";
+
+export default function NotFound() {
+  return (
+    <div className="wrap pb-6 pt-14">
+      <Arch draw className="w-32" />
+      <h1 className="mt-5 text-[length:var(--step-4)]">This page has wandered off.</h1>
+      <p className="measure mt-4 text-[length:var(--step-1)]">Unlike the dogs, it hasn&rsquo;t come back when called.</p>
+      <div className="mt-7 flex flex-wrap gap-3">
+        <Link href="/" className="btn btn-ink">Go to the home page</Link>
+        <Link href="/prices/" className="btn btn-line">See prices</Link>
+      </div>
+    </div>
+  );
+}
