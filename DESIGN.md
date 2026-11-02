@@ -64,6 +64,7 @@ Direction 4 + 6 + 8 combined. Least typical that still sells: prices are open an
 | `--band-pink` | `#dd7f7f` | Outer arc. Group walks. |
 | `--band-yellow` | `#f3dc84` | Second arc. One-to-one walks. |
 | `--band-green` | `#a5c48b` | Third arc. Pet visits. |
+| `--band-grey` | `#9597a0` | Fourth arc. Only in the drawn rainbow; no class uses it. |
 | `--band-blue` | `#96d3f2` | Inner arc. Overnight pet and house sits. |
 | `--band-navy` | `--ink` | The outline. Farm animals and horses (white text). |
 
@@ -82,7 +83,7 @@ Radius 3px on controls, 0 on bands and photos. Ruled rows and tables, never card
 
 ### Signature component
 
-**The schedule:** a ruled table per class, each headed by a full-width band in its rainbow colour carrying the class number and name, fees in Courier Prime in weekday / weekend columns. On the home page the rainbow arch from the logo is drawn in CSS above the headline as four concentric arcs, the one decorative mark on the site.
+**The schedule:** a ruled table per class, each headed by a full-width band in its rainbow colour carrying the class number and name, fees in Courier Prime in weekday / weekend columns. On the home page the rainbow arch from the logo is drawn in CSS above the headline as five concentric arcs, matching her logo, the one decorative mark on the site.
 
 ### The one interaction
 

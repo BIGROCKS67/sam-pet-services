@@ -1,10 +1,11 @@
-// The rainbow from Sam's logo: four arcs, each outlined in navy as on her flyer.
+// The rainbow from Sam's logo: five arcs, each outlined in navy as on her flyer.
 // With `draw`, the arcs draw in from the outside on load (see .arch-draw in globals.css).
 const arcs = [
   { r: 92, color: "var(--band-pink)" },
-  { r: 74, color: "var(--band-yellow)" },
-  { r: 56, color: "var(--band-green)" },
-  { r: 38, color: "var(--band-blue)" },
+  { r: 78, color: "var(--band-yellow)" },
+  { r: 64, color: "var(--band-green)" },
+  { r: 50, color: "var(--band-grey)" },
+  { r: 36, color: "var(--band-blue)" },
 ];
 
 export function Arch({ className = "", draw = false }: { className?: string; draw?: boolean }) {
@@ -19,7 +20,7 @@ export function Arch({ className = "", draw = false }: { className?: string; dra
           d={`M ${100 - r} 102 A ${r} ${r} 0 0 1 ${100 + r} 102`}
           fill="none"
           stroke="var(--ink)"
-          strokeWidth={17}
+          strokeWidth={14}
         />
       ))}
       {arcs.map(({ r, color }, i) => (
@@ -31,7 +32,7 @@ export function Arch({ className = "", draw = false }: { className?: string; dra
           d={`M ${100 - r} 102 A ${r} ${r} 0 0 1 ${100 + r} 102`}
           fill="none"
           stroke={color}
-          strokeWidth={14}
+          strokeWidth={11}
         />
       ))}
     </svg>
