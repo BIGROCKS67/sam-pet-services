@@ -37,12 +37,6 @@ export function BusinessJsonLd() {
         ],
         knowsAbout: ["Dog walking", "Pet sitting", "House sitting", "Cat care", "Puppy care", "Rabbits and guinea pigs", "Poultry", "Sheep and lambing", "Goats", "Pigs", "Horse care"],
         sameAs: [site.facebook, site.instagram],
-        openingHoursSpecification: {
-          "@type": "OpeningHoursSpecification",
-          dayOfWeek: ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday", "Sunday"],
-          opens: "00:00",
-          closes: "23:59",
-        },
         hasOfferCatalog: {
           "@type": "OfferCatalog",
           name: "Pet and animal care in Brackley",

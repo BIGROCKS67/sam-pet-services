@@ -15,10 +15,12 @@ export const site = {
   postcodeArea: "NN13",
   facebook: "https://www.facebook.com/samspetservices/",
   facebookReviews: "https://www.facebook.com/samspetservices/reviews",
+  // Most clients book through Facebook Messenger.
+  messenger: "https://m.me/samspetservices",
   instagram: "https://www.instagram.com/samrockell/",
   reviewCount: 18,
   description:
-    "Dog walking, pet visits and overnight pet and house sits in Brackley and nearby villages, from Sam Rockell. Sheep, goats, hens and horses looked after too. Hour-long dog walks from £14.",
+    "Dog walking, pet visits and overnight pet and house stays in Brackley and nearby villages, from Sam Rockell. Sheep, goats, hens and horses looked after too. Hour-long dog walks from £14.",
 };
 
 export function whatsappLink(text: string) {
@@ -77,19 +79,19 @@ export const classes: ServiceClass[] = [
     name: "Pet visit",
     short: "I pop in to feed, play, comfort and let them out",
     body: "I will pop over to see your pet in the comfort of their own home. I can feed and water, play, comfort, and let them out into the garden if they or you need it.",
-    rates: [{ label: "Per visit", weekday: 11, weekend: 15, from: true }],
+    rates: [{ label: "30 minutes", weekday: 11, weekend: 15 }],
   },
   {
     id: "sit",
     number: 4,
     band: "blue",
-    name: "Pet and house sit",
+    name: "Overnight pet and house stay",
     short: "I stay overnight in your home with your animals",
     body: "I stay in your home overnight to keep your animals company. For dogs this includes an hour of walking.",
     rateHeads: ["Overnight", "Price"],
     rates: [
-      { label: "Cat care", weekday: 35, weekend: null },
-      { label: "Dog care", weekday: 50, weekend: null, from: true },
+      { label: "Cats", weekday: 35, weekend: null },
+      { label: "Dogs", weekday: 50, weekend: null, from: true },
     ],
     note: "Plus £5 for each additional pet. There are extra charges for a longer walking routine, and for weekends and bank holidays.",
   },
@@ -106,9 +108,9 @@ export const classes: ServiceClass[] = [
     id: "wedding",
     number: 6,
     band: "grey",
-    name: "Wedding dog-sitting",
+    name: "Wedding Day Pet Chaperone",
     short: "Your dog at your wedding, looked after behind the scenes",
-    body: "A personal wedding dog-sitting service so your best friend is part of your special day. I look after your dog behind the scenes, so you can enjoy every moment.",
+    body: "A personal pet chaperone service so your best friend is part of your wedding day. I look after your dog behind the scenes, so you can enjoy every moment. Can be paired with an overnight stay at your home.",
     rates: [],
   },
 ];

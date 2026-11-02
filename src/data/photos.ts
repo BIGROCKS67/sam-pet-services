@@ -20,7 +20,7 @@ export const sam: Record<string, PhotoItem> = {
 
 export const rollCall: { animal: string; note: string; photo?: PhotoItem }[] = [
   { animal: "Dogs", note: "Group walks, one-to-ones, puppies and the occasional menace", photo: { src: "/images/pup-harness-standing.jpg", alt: "White puppy in a green harness", w: 414, h: 414 } },
-  { animal: "Cats", note: "Feeding, litter, company and overnight sits", photo: { src: "/images/cat-asleep.jpg", alt: "A tabby cat asleep with a toy", w: 750, h: 1000 } },
+  { animal: "Cats", note: "Feeding, litter, company and overnight stays", photo: { src: "/images/cat-asleep.jpg", alt: "A tabby cat asleep with a toy", w: 750, h: 1000 } },
   { animal: "Guinea pigs and rabbits", note: "Cleaning out, feeding, a fuss", photo: sam.guineaPig },
   { animal: "Hens and ducks", note: "Let out, shut in, eggs collected", photo: { src: "/images/ducklings.jpg", alt: "Yellow ducklings in straw beside a feed bowl", w: 732, h: 593 } },
   { animal: "Sheep", note: "Daily checks, feeding, help at lambing", photo: sam.sheep },

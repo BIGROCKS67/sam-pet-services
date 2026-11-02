@@ -16,7 +16,7 @@ export const faqs: Faq[] = [
     id: "group-or-solo",
     q: "What is the difference between a group walk and a one-to-one walk?",
     a: [
-      "On a group walk I pick your dog up and they join a small group of other dogs for an outdoor adventure. It suits sociable dogs and is the cheaper option.",
+      "On a group walk I pick your dog up and they join a small group of other dogs for an outdoor adventure. It suits sociable dogs who enjoy company.",
       "On a one-to-one walk your dog is the only one with me, on a route you choose or one of my favourite routes. It suits puppies, older dogs, reactive dogs and dogs still learning their manners.",
     ],
   },
@@ -32,15 +32,15 @@ export const faqs: Faq[] = [
     id: "cat-sitting",
     q: "Can you feed my cat while I am on holiday?",
     a: [
-      "Yes. A pet visit starts at £11 on weekdays and £15 at weekends and bank holidays. I come to your home, feed and water your cat, clean the litter tray, and give them some company.",
-      "If your cat prefers someone in the house overnight, overnight cat care is £35 a night. You can book more than one visit a day.",
+      "Yes. A 30-minute pet visit is £11 on weekdays and £15 at weekends and bank holidays. I come to your home, feed and water your cat, clean the litter tray, and give them some company.",
+      "If your cat prefers someone in the house overnight, overnight cat care is £35 a night. If your cat needs more than one visit a day, ask.",
     ],
   },
   {
     id: "small-pets",
     q: "Do you look after rabbits, guinea pigs and other small pets?",
     a: [
-      "Yes. Rabbits, guinea pigs, hens and ducks are all covered by a pet visit, from £11 on weekdays. I feed, water, clean out and check them, and let hens out and shut them in if you need it.",
+      "Yes. Rabbits, guinea pigs, hens and ducks are all covered by a pet visit, £11 for 30 minutes on weekdays. I feed, water, clean out and check them, and let hens out and shut them in if you need it.",
     ],
   },
   {
@@ -63,7 +63,7 @@ export const faqs: Faq[] = [
     id: "weekends",
     q: "Do you work weekends and bank holidays?",
     a: [
-      "Yes, seven days a week, including bank holidays. Weekend and bank holiday prices are a little higher and are all on the price list.",
+      "Some weekends and bank holidays, yes. I don't work every weekend, so message me with the dates and I will tell you if I am free. Weekend and bank holiday prices are on the price list.",
     ],
   },
   {
@@ -77,22 +77,22 @@ export const faqs: Faq[] = [
     id: "how-to-book",
     q: "How do I book Sam's Pet Services?",
     a: [
-      "Message Sam on WhatsApp or ring 07708 431901. The message page on this website works out the price from the list and writes the WhatsApp message for you, with the days, your pets and your village, so you only need to press send.",
+      "Message Sam on Facebook Messenger or WhatsApp, or ring 07708 431901. The message page on this website works out the price from the list and writes the WhatsApp message for you, with the days, your pets and your village, so you only need to press send.",
     ],
   },
   {
     id: "packages",
     q: "Can I book a regular weekly walk or a package for a holiday?",
     a: [
-      "Yes. Packages can be put together for regular weeks and for holidays, for example daily walks plus an evening visit, or overnight sits with extra visits for other animals. Message me with what you need.",
+      "Yes. Packages can be put together for regular weeks and for holidays, for example daily walks plus an evening visit, or overnight stays with extra visits for other animals. Message me with what you need.",
     ],
   },
   {
     id: "wedding",
     q: "Can someone look after my dog at our wedding?",
     a: [
-      "Yes. Sam's wedding dog-sitting service brings your dog to your wedding and looks after them behind the scenes, from getting them ready in the morning to the ceremony and photographs, then a walk, water and rest while you celebrate.",
-      "Each wedding gets its own package and price. Message Sam with the date, the venue and your dog's name and breed.",
+      "Yes. Sam's Wedding Day Pet Chaperone service brings your dog to your wedding and looks after them behind the scenes, from getting them ready in the morning to the ceremony and photographs, then a walk, water and rest while you celebrate.",
+      "It can be paired with an overnight stay at your home. Each wedding gets its own package, and the price is available on request. Message Sam with the date, the venue and your dog's name and breed.",
     ],
   },
   {

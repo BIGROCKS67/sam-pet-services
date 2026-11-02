@@ -4,7 +4,7 @@ import { site } from "@/data/site";
 
 export const metadata: Metadata = {
   title: "Book Sam: write your WhatsApp message",
-  description: "Choose a walk, visit or overnight sit, see the price from Sam's list, and send her the details on WhatsApp in one tap.",
+  description: "Choose a walk, visit or overnight stay, see the price from Sam's list, and send her the details on WhatsApp in one tap.",
   alternates: { canonical: "/book/" },
 };
 

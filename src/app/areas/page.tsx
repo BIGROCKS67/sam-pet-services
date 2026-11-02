@@ -7,7 +7,7 @@ import { areas, defaultMessage, site, whatsappLink } from "@/data/site";
 
 export const metadata: Metadata = {
   title: "Dog walker and pet sitter for Brackley villages",
-  description: `Dog walking, pet visits and overnight sits in ${areas.slice(0, 6).join(", ")} and more villages around Brackley, NN13. First three miles of travel included.`,
+  description: `Dog walking, pet visits and overnight stays in ${areas.slice(0, 6).join(", ")} and more villages around Brackley, NN13. First three miles of travel included.`,
   alternates: { canonical: "/areas/" },
 };
 
@@ -18,7 +18,7 @@ export default function Areas() {
   return (
     <div className="wrap pb-6 pt-10 md:pt-14">
       <BreadcrumbJsonLd trail={[{ name: "Areas", path: "/areas/" }]} />
-      <h1 className="text-[length:var(--step-4)]">Where Sam walks and sits</h1>
+      <h1 className="text-[length:var(--step-4)]">Where Sam works</h1>
       <p className="measure mt-4 text-[length:var(--step-1)] leading-snug">
         I am based in Brackley, Northamptonshire (NN13), and look after dogs, cats, small pets, horses and livestock in the town and the villages around it, on both sides of the Oxfordshire and Buckinghamshire borders.
       </p>
@@ -50,7 +50,7 @@ export default function Areas() {
         </tbody>
       </table>
       <p className="measure mt-4">
-        In all of them I do dog walking (group and one-to-one), pet visits, overnight pet and house sits, and help with horses, sheep, goats and hens. <Link href="/book/">Work out a price for your village</Link>.
+        In all of them I do dog walking (group and one-to-one), pet visits, overnight pet and house stays, and help with horses, sheep, goats and hens. <Link href="/book/">Work out a price for your village</Link>.
       </p>
 
       <h2 className="mt-12 text-[length:var(--step-2)]">Services</h2>

@@ -5,6 +5,7 @@ import { MessageBuilder } from "@/components/MessageBuilder";
 import { Photo } from "@/components/Photo";
 import { FeeIndex } from "@/components/Schedule";
 import { FaqJsonLd, FaqList } from "@/components/Seo";
+import { MessengerGlyph, SocialLinks } from "@/components/Social";
 import { WhatsAppGlyph } from "@/components/WhatsAppGlyph";
 import { faqById } from "@/data/faqs";
 import { rollCall, saddle, sam, walks } from "@/data/photos";
@@ -15,36 +16,46 @@ const homeFaqs = faqById(["dog-walk-cost", "pet-sit-cost", "livestock", "areas"]
 export default function Home() {
   return (
     <>
-      {/* Hero: Sam's logo, type, and the fees straight away. */}
-      <section className="wrap grid gap-10 pb-14 pt-8 md:pt-14 lg:grid-cols-[minmax(0,1.25fr)_minmax(0,1fr)] lg:items-end">
+      {/* Hero: Sam's logo, type, Sam with the animals, and the fees straight away. */}
+      <section className="wrap grid gap-10 pb-14 pt-8 md:pt-14 lg:grid-cols-[minmax(0,1.25fr)_minmax(0,1fr)] lg:items-start">
         <div>
           <Logo priority className="w-60 md:w-72" />
           <h1 className="mt-5 text-[length:var(--step-4)]">
-            Dog walks, pet visits and overnight sits in Brackley.
+            Dog walks, pet visits and overnight stays in Brackley.
             <span className="mt-2 block text-[length:var(--step-2)] text-[var(--ink-2)]">
               Sheep, hens and horses <em>too</em>.
             </span>
           </h1>
           <p className="hero-in measure mt-5 text-[length:var(--step-1)] leading-snug">
-            I&rsquo;m Sam Rockell. I walk dogs, pop in to feed cats, stay over when you&rsquo;re away, and help out on smallholdings round Brackley.
+            I&rsquo;m Sam Rockell. I walk dogs, pop in to care for cats, rabbits, guinea pigs and other small animals, stay over when you&rsquo;re away, and help out on smallholdings around Brackley.
           </p>
           <div className="hero-in mt-7 flex flex-wrap items-center gap-3">
             <a href={whatsappLink(defaultMessage)} className="btn btn-ink">
               <WhatsAppGlyph />
               Message Sam on WhatsApp
             </a>
+            <a href={site.messenger} rel="noopener" className="btn btn-line">
+              <MessengerGlyph />
+              Facebook Messenger
+            </a>
             <a href={site.phoneHref} className="btn btn-line">
               Call <span className="fig">{site.phoneDisplay}</span>
             </a>
           </div>
-          <p className="mt-5 text-[length:var(--step--1)]">
-            <a href={site.facebookReviews} rel="noopener">
+          <div className="mt-6 flex flex-wrap items-center gap-x-6 gap-y-3">
+            <SocialLinks />
+            <Link href="/reviews/" className="text-[length:var(--step--1)]">
               {site.reviewCount} reviews on Facebook, 100% recommend
-            </a>
-          </p>
+            </Link>
+          </div>
         </div>
 
         <div>
+          <div className="mb-8 grid grid-cols-3 gap-3">
+            {[sam.hen, sam.lamb, sam.donkey].map((p, i) => (
+              <Photo key={p.src} p={{ ...p, caption: undefined }} priority={i === 0} sizes="(min-width: 1024px) 150px, 30vw" className="[&_img]:aspect-[3/4] [&_img]:object-cover" />
+            ))}
+          </div>
           <div className="flex items-baseline justify-between gap-4 border-b-[1.5px] border-[var(--ink)] pb-2">
             <h2 className="text-[length:var(--step-1)]">Fees at a glance</h2>
             <Link href="/prices/" className="text-[length:var(--step--1)] font-semibold">
@@ -154,8 +165,8 @@ export default function Home() {
             </div>
           </div>
           <div className="grid grid-cols-2 gap-4">
-            <Photo p={sam.hen} sizes="(min-width: 1024px) 260px, 45vw" className="reveal [&_img]:aspect-[3/4] [&_img]:object-cover" />
-            <Photo p={sam.lamb} sizes="(min-width: 1024px) 260px, 45vw" className="reveal mt-10 [&_img]:aspect-[3/4] [&_img]:object-cover" />
+            <Photo p={sam.sheep} sizes="(min-width: 1024px) 260px, 45vw" className="reveal [&_img]:aspect-[3/4] [&_img]:object-cover" />
+            <Photo p={sam.guineaPig} sizes="(min-width: 1024px) 260px, 45vw" className="reveal mt-10 [&_img]:aspect-[3/4] [&_img]:object-cover" />
             <Photo p={saddle[1]} sizes="(min-width: 1024px) 540px, 92vw" className="reveal col-span-2 [&_img]:aspect-[4/3] [&_img]:object-cover" />
           </div>
         </div>

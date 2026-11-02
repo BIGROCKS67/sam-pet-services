@@ -44,7 +44,7 @@ export const metadata: Metadata = {
   description: site.description,
   alternates: { canonical: "/" },
   openGraph: {
-    title: "Sam's Pet Services: dog walks, pet visits and overnight sits in Brackley",
+    title: "Sam's Pet Services: dog walks, pet visits and overnight stays in Brackley",
     description: site.description,
     url: site.url,
     siteName: site.name,

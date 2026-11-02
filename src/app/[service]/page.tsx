@@ -5,6 +5,7 @@ import { Logo } from "@/components/Logo";
 import { Photo } from "@/components/Photo";
 import { Schedule } from "@/components/Schedule";
 import { BreadcrumbJsonLd, FaqJsonLd, FaqList, ServiceJsonLd } from "@/components/Seo";
+import { MessengerGlyph } from "@/components/Social";
 import { WhatsAppGlyph } from "@/components/WhatsAppGlyph";
 import { faqById } from "@/data/faqs";
 import { servicePageBySlug, servicePages } from "@/data/services";
@@ -61,15 +62,17 @@ export default async function ServicePageView({ params }: Props) {
               <WhatsAppGlyph />
               Message Sam on WhatsApp
             </a>
+            <a href={site.messenger} rel="noopener" className="btn btn-line">
+              <MessengerGlyph />
+              Messenger
+            </a>
             <Link href="/book/" className="btn btn-line">
               Work out my price
             </Link>
           </div>
           <p className="mt-5 text-[length:var(--step--1)]">
             By Sam Rockell, {site.town}.{" "}
-            <a href={site.facebookReviews} rel="noopener">
-              {site.reviewCount} Facebook reviews, 100% recommend
-            </a>
+            <Link href="/reviews/">{site.reviewCount} Facebook reviews, 100% recommend</Link>
           </p>
         </div>
         <div className="grid grid-cols-2 gap-3">

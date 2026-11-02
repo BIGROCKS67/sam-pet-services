@@ -24,6 +24,7 @@ export function Footer() {
             </Link>
           ))}
           <Link href="/prices/">Prices</Link>
+          <Link href="/reviews/">Reviews</Link>
           <Link href="/areas/">Villages covered</Link>
           <Link href="/faq/">Questions</Link>
         </nav>

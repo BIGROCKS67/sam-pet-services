@@ -1,18 +1,20 @@
 import Link from "next/link";
 import { site } from "@/data/site";
 import { Logo } from "./Logo";
+import { FacebookGlyph, InstagramGlyph } from "./Social";
 
 const nav = [
   { href: "/dog-walking-brackley/", label: "Dog walking" },
   { href: "/pet-sitting-brackley/", label: "Pet sitting" },
+  { href: "/wedding-dog-sitting/", label: "Weddings" },
   { href: "/prices/", label: "Prices" },
+  { href: "/reviews/", label: "Reviews" },
   { href: "/faq/", label: "Questions" },
 ];
 
 const more = [
   { href: "/cat-sitting-brackley/", label: "Cat sitting and visits" },
   { href: "/smallholding-livestock-horse-care/", label: "Horses and livestock" },
-  { href: "/wedding-dog-sitting/", label: "Wedding dog-sitting" },
   { href: "/areas/", label: "Areas" },
   { href: "/#about", label: "About Sam" },
   { href: "/book/", label: "Write a message" },
@@ -35,7 +37,13 @@ export function Header() {
               {n.label}
             </Link>
           ))}
-          <a href={site.phoneHref} className="fig text-[1.05rem] font-bold no-underline hover:underline">
+          <a href={site.facebook} rel="noopener" aria-label="Sam's Pet Services on Facebook" className="no-underline">
+            <FacebookGlyph size={22} />
+          </a>
+          <a href={site.instagram} rel="noopener" aria-label="Sam on Instagram" className="no-underline">
+            <InstagramGlyph size={22} />
+          </a>
+          <a href={site.phoneHref} className="fig hidden text-[1.05rem] font-bold no-underline hover:underline xl:inline">
             {site.phoneDisplay}
           </a>
         </nav>
@@ -50,6 +58,12 @@ export function Header() {
                 {n.label}
               </Link>
             ))}
+            <a href={site.facebook} rel="noopener" className="flex items-center gap-2 border-t border-[var(--rule)] px-3 py-2.5 font-semibold no-underline">
+              <FacebookGlyph /> Facebook
+            </a>
+            <a href={site.instagram} rel="noopener" className="flex items-center gap-2 px-3 py-2.5 font-semibold no-underline">
+              <InstagramGlyph /> Instagram
+            </a>
             <a href={site.phoneHref} className="fig block border-t border-[var(--rule)] px-3 py-3 font-bold no-underline">
               Call {site.phoneDisplay}
             </a>

@@ -13,7 +13,7 @@ const servicePath: Record<ServiceClass["id"], string> = {
 
 function FeeTable({ c }: { c: ServiceClass }) {
   if (!c.rates.length) {
-    return <p className="fig mt-4 text-[length:var(--step-1)]">Priced for you</p>;
+    return <p className="mt-4 text-[length:var(--step-1)] font-semibold">Price available on request</p>;
   }
   const heads = c.rateHeads ?? ["Length", "Weekday", "Weekend"];
   return (
@@ -85,8 +85,9 @@ export function Schedule({ only, linkOut = true }: { only?: ServiceClass["id"][]
   );
 }
 
-// Short index of classes with each one's headline weekday fee (the first rate listed), for the home page.
+// Short index of every class and each of its weekday fees, for the home page.
 export function FeeIndex() {
+  const small = "font-[family-name:var(--font-body)] text-[length:var(--step--1)]";
   return (
     <table className="fees bg-[var(--lemon)]">
       <caption className="sr-only">Sam&rsquo;s services and weekday prices</caption>
@@ -99,31 +100,29 @@ export function FeeIndex() {
         </tr>
       </thead>
       <tbody>
-        {classes.map((c) => {
-          // Walks lead with the hour, which is what most people book.
-          const head = c.rates[0];
-          return (
-            <tr key={c.id}>
-              <th scope="row" className="font-normal">
-                <a href={servicePath[c.id]} className="flex items-center gap-3 no-underline hover:underline">
-                  <span className={`band-${c.band} inline-block h-4 w-4 shrink-0 border border-[var(--ink)]`} aria-hidden="true" />
-                  {c.name}
-                </a>
-              </th>
-              <td className="fig">
-                {head?.weekday != null ? (
-                  <>
-                    {head.from ? <span className="mr-1 font-[family-name:var(--font-body)] text-[length:var(--step--1)]">from</span> : null}
-                    {money(head.weekday)}
-                    {head.label === "1 hour" ? <span className="ml-1 font-[family-name:var(--font-body)] text-[length:var(--step--1)]">an hour</span> : null}
-                  </>
-                ) : (
-                  "Ask"
-                )}
-              </td>
-            </tr>
-          );
-        })}
+        {classes.map((c) => (
+          <tr key={c.id}>
+            <th scope="row" className="font-normal align-top">
+              <a href={servicePath[c.id]} className="flex items-start gap-3 no-underline hover:underline">
+                <span className={`band-${c.band} mt-1 inline-block h-4 w-4 shrink-0 border border-[var(--ink)]`} aria-hidden="true" />
+                {c.name}
+              </a>
+            </th>
+            <td className="fig align-top">
+              {c.rates.length ? (
+                c.rates.map((r) => (
+                  <span key={r.label} className="block whitespace-nowrap">
+                    <span className={`mr-2 ${small}`}>{r.label}</span>
+                    {r.from ? <span className={`mr-1 ${small}`}>from</span> : null}
+                    {r.weekday !== null ? money(r.weekday) : ""}
+                  </span>
+                ))
+              ) : (
+                <span className={small}>Price on request</span>
+              )}
+            </td>
+          </tr>
+        ))}
       </tbody>
     </table>
   );

@@ -2,6 +2,7 @@
 
 import { useId, useMemo, useState } from "react";
 import { areas, site, whatsappLink } from "@/data/site";
+import { MessengerGlyph } from "./Social";
 import { WhatsAppGlyph } from "./WhatsAppGlyph";
 
 type Kind = "group" | "solo" | "visit" | "sit-cat" | "sit-dog" | "farm" | "wedding";
@@ -13,7 +14,7 @@ const kinds: { id: Kind; label: string }[] = [
   { id: "sit-dog", label: "Overnight sit, dogs" },
   { id: "sit-cat", label: "Overnight sit, cats" },
   { id: "farm", label: "Horses, sheep or smallholding" },
-  { id: "wedding", label: "Wedding dog-sitting" },
+  { id: "wedding", label: "Wedding Day Pet Chaperone" },
 ];
 
 const days = ["Mon", "Tue", "Wed", "Thu", "Fri", "Sat", "Sun"] as const;
@@ -380,6 +381,11 @@ export function MessageBuilder() {
           <a href={whatsappLink(message)} className="btn btn-ink w-full">
             <WhatsAppGlyph />
             Send this to Sam on WhatsApp
+          </a>
+          {/* Messenger links can't carry text, so copy it first and let them paste. */}
+          <a href={site.messenger} rel="noopener" onClick={copy} className="btn btn-line w-full">
+            <MessengerGlyph />
+            Copy and open Facebook Messenger
           </a>
           <div className="flex flex-wrap gap-x-5 gap-y-2 text-[length:var(--step--1)]">
             <a

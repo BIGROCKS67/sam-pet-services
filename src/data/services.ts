@@ -33,7 +33,7 @@ export const servicePages: ServicePage[] = [
       {
         h: "Group walks",
         p: [
-          "Your dog joins a small group of other dogs for an outdoor adventure. It is the cheaper option and suits sociable dogs who love company. I have walked one client's very energetic springer spaniel for years.",
+          "Your dog joins a small group of other dogs for an outdoor adventure. It suits sociable dogs who love company.",
         ],
       },
       {
@@ -61,25 +61,18 @@ export const servicePages: ServicePage[] = [
     h1: "Overnight pet and house sitting in Brackley",
     intro:
       "When you go away, I move in. Your animals keep their own home, their own beds and their routine, and your house has someone in it every night.",
-    classIds: ["sit", "visit"],
+    classIds: ["sit"],
     sections: [
       {
-        h: "What an overnight sit includes",
+        h: "What an overnight stay includes",
         p: [
-          "I stay overnight in your home and look after your animals as you would: feeding, water, play, comfort and, for dogs, an hour of walking. Clients often mention the house was left tidy.",
-          "One client booked me at really short notice for two dogs, one of whom she called a bit of a menace, and wrote that I was calm and confident with him.",
+          "I stay overnight in your home and look after your animals as you would: feeding, water, play, comfort and, for dogs, an hour of walking. Clients often mention the house was left tidy, and you can read what they say on the reviews page.",
         ],
       },
       {
         h: "Prices",
         p: [
           "Overnight cat care is £35 a night. Overnight dog care starts at £50 a night, plus £5 for each additional pet. A longer walking routine, weekends and bank holidays cost a little more, and I confirm the exact price before you book.",
-        ],
-      },
-      {
-        h: "Daytime visits instead",
-        p: [
-          "If your pets are happy on their own overnight, pet visits start at £11. I can come once, twice or three times a day.",
         ],
       },
     ],
@@ -89,9 +82,9 @@ export const servicePages: ServicePage[] = [
   {
     slug: "cat-sitting-brackley",
     service: "Cat sitting and pet visits",
-    title: "Cat sitter in Brackley, visits from £11",
+    title: "Cat sitter in Brackley, 30-minute visits £11",
     description:
-      "Cat sitting and pet visits in Brackley. Sam pops in to feed, water, clean out and give your cat, rabbit, guinea pig or hens some company. From £11 a visit.",
+      "Cat sitting and pet visits in Brackley. Sam pops in to feed, water, clean out and give your cat, rabbit, guinea pig or hens some company. £11 for a 30-minute visit.",
     h1: "Cat sitting and pet visits in Brackley",
     intro:
       "I pop over to see your pet in the comfort of their own home. I feed and water them, clean out litter trays and hutches, play, give them a fuss, and let them into the garden if they need it.",
@@ -100,7 +93,7 @@ export const servicePages: ServicePage[] = [
       {
         h: "Cats",
         p: [
-          "Most cats are happiest at home. A visit keeps them fed, their litter clean and gives them company. Book one, two or three visits a day, or overnight cat care at £35 a night.",
+          "Most cats are happiest at home. A visit keeps them fed, their litter clean and gives them company. Visits are 30 minutes and £11 on weekdays. If your cat needs more than one a day, ask, or book overnight cat care at £35 a night.",
         ],
       },
       {
@@ -147,11 +140,11 @@ export const servicePages: ServicePage[] = [
   },
   {
     slug: "wedding-dog-sitting",
-    service: "Wedding dog-sitting",
-    title: "Wedding dog-sitter near Brackley",
+    service: "Wedding Day Pet Chaperone",
+    title: "Wedding Day Pet Chaperone near Brackley",
     description:
-      "Wedding dog-sitting from Sam Rockell, Brackley. Your dog at your wedding, cared for behind the scenes from getting ready to the photos. Bespoke packages.",
-    h1: "Wedding dog-sitting near Brackley",
+      "Wedding Day Pet Chaperone from Sam Rockell, Brackley. Your dog at your wedding, cared for behind the scenes from getting ready to the photos, with an overnight stay if you need it.",
+    h1: "Wedding Day Pet Chaperone",
     intro:
       "Dogs are part of the family, and your wedding memories should include them too. I look after your dog behind the scenes for the day, so they can be part of it and you can enjoy every moment.",
     classIds: ["wedding"],
@@ -161,6 +154,7 @@ export const servicePages: ServicePage[] = [
         p: [
           "I collect your dog, get them washed, brushed and into their wedding outfit, and bring them to the venue. They join you for the ceremony and the photographs, then I take them somewhere quiet for water, a walk and a rest while you carry on.",
           "At the end of the day I take them home, or back to whoever is looking after them, so nobody in the wedding party has to keep an eye on the dog.",
+          "It can be paired with an overnight stay at your home, so your dog is looked after that night too while you enjoy the rest of your celebrations.",
         ],
       },
       {
