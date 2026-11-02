@@ -39,7 +39,7 @@ export const metadata: Metadata = {
   metadataBase: new URL(site.url),
   title: {
     default: "Dog walking and pet sitting in Brackley | Sam's Pet Services",
-    template: "%s | Sam's Pet Services, Brackley",
+    template: "%s | Sam's Pet Services",
   },
   description: site.description,
   alternates: { canonical: "/" },

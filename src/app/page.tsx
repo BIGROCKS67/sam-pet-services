@@ -4,9 +4,13 @@ import { Arch } from "@/components/Arch";
 import { MessageBuilder } from "@/components/MessageBuilder";
 import { Photo } from "@/components/Photo";
 import { FeeIndex } from "@/components/Schedule";
+import { FaqJsonLd, FaqList } from "@/components/Seo";
 import { WhatsAppGlyph } from "@/components/WhatsAppGlyph";
+import { faqById } from "@/data/faqs";
 import { rollCall, saddle, sam, walks } from "@/data/photos";
 import { areas, defaultMessage, flyerQuotes, namedReview, site, whatsappLink } from "@/data/site";
+
+const homeFaqs = faqById(["dog-walk-cost", "pet-sit-cost", "livestock", "areas"]);
 
 export default function Home() {
   return (
@@ -165,6 +169,9 @@ export default function Home() {
               Where I go
             </h2>
             <p className="mt-3">The first three miles of travel are in the price. Further out, I add a mileage charge and tell you before I book.</p>
+            <Link href="/areas/" className="mt-3 inline-block font-semibold">
+              All villages
+            </Link>
           </div>
           <ul className="columns-2 gap-6 sm:columns-3">
             {areas.map((a) => (
@@ -173,6 +180,22 @@ export default function Home() {
               </li>
             ))}
           </ul>
+        </div>
+      </section>
+
+      {/* Quick answers, also marked up as FAQ data for search and AI assistants. */}
+      <section aria-labelledby="answers-h" className="wrap pt-16">
+        <FaqJsonLd items={homeFaqs} />
+        <div className="grid gap-6 md:grid-cols-[minmax(0,1fr)_minmax(0,2fr)]">
+          <div>
+            <h2 id="answers-h" className="text-[length:var(--step-3)]">
+              Quick answers
+            </h2>
+            <Link href="/faq/" className="mt-3 inline-block font-semibold">
+              More questions
+            </Link>
+          </div>
+          <FaqList items={homeFaqs} />
         </div>
       </section>
 

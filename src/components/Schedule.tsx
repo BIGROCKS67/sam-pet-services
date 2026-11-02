@@ -2,6 +2,14 @@ import { classes, terms, type ServiceClass } from "@/data/site";
 
 const money = (n: number) => `£${n}`;
 
+const servicePath: Record<ServiceClass["id"], string> = {
+  group: "/dog-walking-brackley/",
+  solo: "/dog-walking-brackley/",
+  visit: "/cat-sitting-brackley/",
+  sit: "/pet-sitting-brackley/",
+  farm: "/smallholding-livestock-horse-care/",
+};
+
 function FeeTable({ c }: { c: ServiceClass }) {
   if (!c.rates.length) {
     return <p className="fig mt-4 text-[length:var(--step-1)]">Priced for you</p>;
@@ -38,10 +46,11 @@ function FeeTable({ c }: { c: ServiceClass }) {
 }
 
 // The signature: each class sits on its own band of Sam's rainbow.
-export function Schedule() {
+export function Schedule({ only, linkOut = true }: { only?: ServiceClass["id"][]; linkOut?: boolean } = {}) {
+  const shown = only ? classes.filter((c) => only.includes(c.id)) : classes;
   return (
     <div className="border-[1.5px] border-[var(--ink)] bg-[var(--lemon)]">
-      {classes.map((c) => (
+      {shown.map((c) => (
         <section key={c.id} id={c.id} aria-labelledby={`${c.id}-h`} className="border-b-[1.5px] border-[var(--ink)] last:border-b-0">
           <div className={`band-${c.band} reveal flex items-baseline gap-4 px-4 py-3 md:px-6`}>
             <span className="fig shrink-0 whitespace-nowrap text-[length:var(--step-1)] font-bold">Class {c.number}</span>
@@ -53,6 +62,11 @@ export function Schedule() {
             <div>
               <p className="measure">{c.body}</p>
               {c.note ? <p className="measure mt-3 text-[var(--ink-2)]">{c.note}</p> : null}
+              {linkOut ? (
+                <a href={servicePath[c.id]} className="mt-3 inline-block font-semibold">
+                  More about {c.name.toLowerCase()}
+                </a>
+              ) : null}
             </div>
             <FeeTable c={c} />
           </div>
@@ -89,7 +103,7 @@ export function FeeIndex() {
           return (
             <tr key={c.id}>
               <th scope="row" className="font-normal">
-                <a href={`/prices/#${c.id}`} className="flex items-center gap-3 no-underline hover:underline">
+                <a href={servicePath[c.id]} className="flex items-center gap-3 no-underline hover:underline">
                   <span className={`band-${c.band} inline-block h-4 w-4 shrink-0 border border-[var(--ink)]`} aria-hidden="true" />
                   {c.name}
                 </a>

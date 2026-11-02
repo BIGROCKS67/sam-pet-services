@@ -7,3 +7,4 @@ next-env.d.ts
 .DS_Store
 # Raw downloads include personal photos not used on the site
 source-photos
+.indexnow-key
