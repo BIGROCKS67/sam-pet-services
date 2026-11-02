@@ -84,22 +84,23 @@ export function Schedule({ only, linkOut = true }: { only?: ServiceClass["id"][]
   );
 }
 
-// Short index of classes with the lowest weekday fee, for the home page.
+// Short index of classes with each one's headline weekday fee (the first rate listed), for the home page.
 export function FeeIndex() {
   return (
     <table className="fees bg-[var(--lemon)]">
-      <caption className="sr-only">Sam&rsquo;s services and starting prices</caption>
+      <caption className="sr-only">Sam&rsquo;s services and weekday prices</caption>
       <thead>
         <tr>
           <th scope="col">Class</th>
           <th scope="col" className="num">
-            From
+            Weekday
           </th>
         </tr>
       </thead>
       <tbody>
         {classes.map((c) => {
-          const low = c.rates.length ? Math.min(...c.rates.map((r) => r.weekday ?? Infinity)) : null;
+          // Walks lead with the hour, which is what most people book.
+          const head = c.rates[0];
           return (
             <tr key={c.id}>
               <th scope="row" className="font-normal">
@@ -108,7 +109,17 @@ export function FeeIndex() {
                   {c.name}
                 </a>
               </th>
-              <td className="fig">{low !== null ? money(low) : "Ask"}</td>
+              <td className="fig">
+                {head?.weekday != null ? (
+                  <>
+                    {head.from ? <span className="mr-1 font-[family-name:var(--font-body)] text-[length:var(--step--1)]">from</span> : null}
+                    {money(head.weekday)}
+                    {head.label === "1 hour" ? <span className="ml-1 font-[family-name:var(--font-body)] text-[length:var(--step--1)]">an hour</span> : null}
+                  </>
+                ) : (
+                  "Ask"
+                )}
+              </td>
             </tr>
           );
         })}

@@ -18,7 +18,7 @@ export const site = {
   instagram: "https://www.instagram.com/samrockell/",
   reviewCount: 18,
   description:
-    "Dog walking, pet visits and overnight pet and house sits in Brackley and nearby villages, from Sam Rockell. Sheep, goats, hens and horses looked after too. Prices from £11.",
+    "Dog walking, pet visits and overnight pet and house sits in Brackley and nearby villages, from Sam Rockell. Sheep, goats, hens and horses looked after too. Hour-long dog walks from £14.",
 };
 
 export function whatsappLink(text: string) {

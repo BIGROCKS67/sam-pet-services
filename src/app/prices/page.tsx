@@ -7,7 +7,7 @@ import { defaultMessage, site, whatsappLink } from "@/data/site";
 export const metadata: Metadata = {
   title: "Prices: dog walking, pet visits and house sits",
   description:
-    "Sam's full price list. Group walks from £11, one-to-one walks from £13, pet visits from £11, overnight cat care £35, overnight dog care from £50. Brackley and nearby villages.",
+    "Sam's full price list. Group walks £14 an hour, one-to-one walks £19 an hour, 30-minute walks from £11, pet visits from £11, overnight cat care £35, overnight dog care from £50. Brackley and nearby villages.",
   alternates: { canonical: "/prices/" },
 };
 

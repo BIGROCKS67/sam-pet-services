@@ -22,9 +22,9 @@ export const servicePages: ServicePage[] = [
   {
     slug: "dog-walking-brackley",
     service: "Dog walking",
-    title: "Dog walker in Brackley, walks from £11",
+    title: "Dog walker in Brackley, hour walks from £14",
     description:
-      "Dog walking in Brackley and nearby villages with Sam Rockell. Group walks from £11, one-to-one walks from £13, pick-up and drop-off included. Message on WhatsApp.",
+      "Dog walking in Brackley and nearby villages with Sam Rockell. Group walks £14 an hour (£11 for 30 minutes), one-to-one walks £19 an hour (£13 for 30 minutes), pick-up and drop-off included. Message on WhatsApp.",
     h1: "Dog walking in Brackley",
     intro:
       "I pick your dog up from home, walk them, and bring them back tired and happy. Choose a group walk with my regular pack or a one-to-one walk for just your dog.",

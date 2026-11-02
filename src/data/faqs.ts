@@ -8,8 +8,8 @@ export const faqs: Faq[] = [
     id: "dog-walk-cost",
     q: "How much does a dog walker cost in Brackley?",
     a: [
-      "With Sam's Pet Services a group walk costs £11 for 30 minutes or £14 for an hour on weekdays, and a one-to-one walk costs £13 for 30 minutes or £19 for an hour.",
-      "Weekend and bank holiday walks are £15 and £20 for a group walk, and £19 and £27 for a one-to-one. Pick-up and drop-off are included, as is the first three miles of travel.",
+      "With Sam's Pet Services a one-hour group walk costs £14 on weekdays and a one-hour one-to-one walk costs £19. Shorter 30-minute walks are £11 for a group walk and £13 for a one-to-one.",
+      "At weekends and on bank holidays an hour is £20 for a group walk and £27 for a one-to-one (30 minutes: £15 and £19). Pick-up and drop-off are included, as is the first three miles of travel.",
     ],
   },
   {
